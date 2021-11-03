@@ -13,4 +13,5 @@ for i in reversed(range(num)):
     count += money // money_list[i]
     money = money % money_list[i]
 
+# count 값 출력
 print(count)
