@@ -9,10 +9,8 @@ int main(void)
 	for (int i = 0; i < Loop_Num; i++) {scanf_s("%d", &N[i]);}
 
 	for (int i = Loop_Num; i > 0; i--) { 
-		if (K / N[i] > 0) {
-			Count += K / N[i];
-			K = K % N[i];
-		}
+		Count += K / N[i];
+		K = K % N[i];
 	}
 	printf("%d", Count);
 
