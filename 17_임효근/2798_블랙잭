@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+	int howManyCard_N, baseNum_M, numInput, plusResult, largest=0;
+	vector<int> cardList;
+	vector<int> plusList;
+
+	cin >> howManyCard_N >> baseNum_M;
+
+	for (int i = 0; i < howManyCard_N ; ++i) {//++i를 쓰면 속도가 더 빠르다고 한다.
+ 		cin >> numInput;
+		cardList.push_back(numInput);
+	}
+    
+	for (int a = 0; a < howManyCard_N; a++) {
+		for (int b = a + 1; b < howManyCard_N; b++) {
+			for (int c = b + 1; c < howManyCard_N; c++) {
+				plusList.push_back(cardList[a] + cardList[b] + cardList[c]);
+			}
+		}
+	}
+
+	for (auto plusResult : plusList) { //for문의 범위를 배열의 값에 기반해서 돌리는 기능
+		if (plusResult <= baseNum_M) {
+			if (largest < plusResult) {
+				largest = plusResult;
+			}
+		}
+	}
+
+	cout << largest;
+
+	return 0;
+}
