@@ -30,5 +30,6 @@ int main(void) {
 		sum = 0;
 	}
 	printf("%d\n", generator);
+    
 	return 0;
 }
