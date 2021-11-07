@@ -1,7 +1,8 @@
-// ÀÛ¼ºÀÏ: 2021³â 11¿ù 7ÀÏ
-// ÀÛ¼ºÀÚ: ±è¼öºó
-// ÇÁ·Î±×·¥¸í: ÁÂÇ¥ Á¤·ÄÇÏ±â
+// ìž‘ì„±ì¼: 2021ë…„ 11ì›” 7ì¼
+// ìž‘ì„±ìž: ê¹€ìˆ˜ë¹ˆ
+// í”„ë¡œê·¸ëž¨ëª…: ì¢Œí‘œ ì •ë ¬í•˜ê¸°
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct {
 	int x, y;
