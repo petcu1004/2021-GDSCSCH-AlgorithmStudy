@@ -1,10 +1,10 @@
-// ÀÛ¼ºÀÏ: 2021³â 11¿ù 8ÀÏ
-// ÀÛ¼ºÀÚ: ±è¼öºó
-// ÇÁ·Î±×·¥¸í: Åë°èÇÐ
+// ìž‘ì„±ì¼: 2021ë…„ 11ì›” 8ì¼
+// ìž‘ì„±ìž: ê¹€ìˆ˜ë¹ˆ
+// í”„ë¡œê·¸ëž¨ëª…: í†µê³„í•™
 #include <stdio.h>
 #include <stdlib.h>
 int num[50001] = { 0 };
-int count[8001] = { 0, };
+int count[8001] = { 0 };
 
 int compare(const void* a, const void* b) {
 	if (*(int*)a > *(int*)b)
