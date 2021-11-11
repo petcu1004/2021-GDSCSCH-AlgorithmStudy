@@ -1,3 +1,5 @@
+#팩토리얼
+
 num1 = int(input())
 num2 = 1
 
