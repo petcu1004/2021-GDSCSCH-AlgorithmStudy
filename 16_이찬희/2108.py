@@ -1,3 +1,5 @@
+#통계학- 산술평균 중앙값 최빈값 범위
+
 from collections import Counter  #최빈값 구하기 위함
 
 num1 = int(input())  
