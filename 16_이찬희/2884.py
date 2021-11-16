@@ -1,3 +1,5 @@
+#알람 시계 
+
 H = int(input())
 M = int(input())
 
