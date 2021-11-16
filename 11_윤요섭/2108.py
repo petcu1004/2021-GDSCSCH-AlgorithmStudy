@@ -16,41 +16,42 @@ print(num_list[int(n / 2)])
 max_num = max(num_list)
 min_num = min(num_list)
 #최빈값 계산
-counter = Counter(num_list)
-mode = 0  #최빈값
-mode_num_1 = min_num  #최빈수중 첫번째로 작은 값
-mode_num_2 = 0  #최빈수중 두번째로 작은 값
-for i in range(len(num_list)):
-    current_num = num_list[i]
-    now_counter_num = counter[current_num]
-    #현재 카운터 값이 지금까지의 최빈값보다 클때
-    if now_counter_num > mode:
-        mode = now_counter_num
-        mode_num_1 = current_num
-        mode_num_2 = ''
-    #현재 카운터 값과 지금까지의 최빈값의 크기가 같을때
-    elif now_counter_num == mode:
-        #mode_num_1과 mode_num_2값이 모두 차있을때
-        if mode_num_2 != '':
-            #지금 값이 3개의 수중 가장 작을때
-            if mode_num_1 > current_num:
-                mode_num_2 = mode_num_1
-                mode_num_1 = current_num
-            #지금 값이 두번째로 작을때
-            if mode_num_1 < current_num and current_num < mode_num_2:
-                mode_num_2 = current_num
-        else:
-            #현재 저장된 값이 더 작을때
-            if mode_num_1 < current_num:
-                mode_num_2 = current_num
-            #현재 저장된 값보다 더 작을때
-            else:
-                mode_num_2 = mode_num_1
-                mode_num_1 = current_num
+mode = 0
 
-if mode_num_2 == '':
-    print(mode_num_1)
+counter = Counter(num_list)
+not_overlap_list = []
+# for i in range(len(num_list)):
+#     if num_list[i] not in not_overlap_list:
+#         not_overlap_list.append(num_list[i])
+#print(not_overlap_list)
+
+for i in range(len(not_overlap_list)):
+    if i == 0:
+        mode = counter[num_list[i]]
+        mode_1 = num_list[i]
+        mode_2 = ''
+    else:
+        if counter[num_list[i]] == mode:
+            if mode_1 > num_list[i]:
+                mode_2 = mode_1
+                mode_1 = num_list[i]
+            if mode_2 != '':
+                if mode_1 < num_list[i] < mode_2:
+                    mode_2 = num_list[i]
+            else:
+                if mode_1 < num_list[i]:
+                    mode_2 = num_list[i]
+                else:
+                    mode_2 = mode_1
+                    mode_1 = num_list[i]
+        elif counter[num_list[i]] > mode:
+            mode = counter[num_list[i]]
+            mode_1 = num_list[i]
+            mode_2 = ''
+
+if mode_2 == '':
+    print(mode_1)
 else:
-    print(mode_num_1)
+    print(mode_2)
 #범위
 print(max_num - min_num)
