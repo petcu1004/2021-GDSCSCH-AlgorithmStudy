@@ -1,3 +1,5 @@
+# 스택 함수
+
 import sys
 
 def push(x):
