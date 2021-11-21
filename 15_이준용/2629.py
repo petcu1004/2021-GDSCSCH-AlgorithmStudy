@@ -8,11 +8,12 @@ def solve(w_idx, weight):
     dp[w_idx][weight] = 1
 
     solve(w_idx+1, weight)  #해당 추 선택 X
-    solve(w_idx+1, weight+ weight_list[w_idx-1])  #구슬의 반대편 저울
-    solve(w_idx+1, abs(weight - weight_list[w_idx-1]))    #구슬쪽 저울
+    solve(w_idx+1, weight+ weight_list[w_idx])  #구슬의 반대편 저울
+    solve(w_idx+1, abs(weight - weight_list[w_idx]))    #구슬쪽 저울
     
 w_count = int(input())    #추의 개수
 weight_list = list(map(int, input().split()))   #추 리스트
+weight_list.append(0)
 dp = [[0 for j in range(i*500+1)] for i in range(w_count+1)]
 
 
