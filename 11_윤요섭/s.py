@@ -1,5 +1,9 @@
-s, nums = input().split()
-
+nums = '1234567890'
+s = 2
+answer = [
+    [[' ' for i in range(s + 2)] for j in range(2 * s + 3)]  #???
+    for k in range(len(nums))
+]
 info = {  # 각자 LCD 번호중 몇번이 on 해야 하는지 리스트를 통해서 표현한다. 진짜 LCD판처럼 생각하는 것
     '0': [1, 2, 3, 4, 5, 6],
     '1': [3, 6],
@@ -12,11 +16,6 @@ info = {  # 각자 LCD 번호중 몇번이 on 해야 하는지 리스트를 통�
     '8': [1, 2, 3, 4, 5, 6, 7],
     '9': [1, 2, 3, 5, 6, 7]
 }
-s = int(s)  #문자열로 입력한 s 변수를 정수형으로 바꿔준다.
-answer = [
-    [[' ' for i in range(s + 2)] for j in range(2 * s + 3)]  #???
-    for k in range(len(nums))
-]
 
 
 def lines(board, idx):
@@ -44,12 +43,4 @@ def lines(board, idx):
                 board[s + 1][j + 1] = '-'
 
 
-for i, num in enumerate(nums):
-    lines(answer[i], info[num])
-
-for i in range(2 * s + 3):
-    for j in range(len(nums)):
-        if j == len(nums) - 1:
-            print(''.join(answer[j][i]))
-        else:
-            print(''.join(answer[j][i]), end=' ')
+print(answer[9])
