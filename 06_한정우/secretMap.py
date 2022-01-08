@@ -5,12 +5,12 @@ def solution(n, arr1, arr2):
         a = bin(arr1[i]|arr2[i])[2:]
         while len(a) != n:
             a = "0" + a
-        b = ""
+        c = ""
         for j in range(len(a)):
             if a[j] == "1":
-                b = b + "#"
+                c = c + "#"
             elif a[j] == "0":
-                b = b + " "
+                c = c + " "
             
-        answer.append(b)
+        answer.append(c)
     return answer
