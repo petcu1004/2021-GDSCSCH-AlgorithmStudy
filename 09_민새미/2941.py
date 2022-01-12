@@ -9,3 +9,4 @@ for k in i:
 print(len(i))
 
 #replace함수를..알게되었음..
+#답지
