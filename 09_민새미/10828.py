@@ -5,7 +5,9 @@ stack=[]
 
 while(i>count):
 
+    print(stack)
     a= input()
+
 
     if (a=="top"):
         if len(stack)==0:
@@ -14,7 +16,7 @@ while(i>count):
             top = stack[-1]
             print(top)
     elif (a=="size"):
-        print(stack.size())
+        print(len(stack))
     elif (a=="empty"):
         if(len(stack)==0):
             print("1")
