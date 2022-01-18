@@ -1,36 +1,43 @@
+#큐
+
+import queue
 
 i = int(input())
 count=0
-stack=[]
+queue=[]
 
 while(i>count):
 
-    print(stack)
     a= input()
 
-
-    if (a=="top"):
-        if len(stack)==0:
+    if (a=="front"):
+        if len(queue)==0:
             print("-1")
         else :
-            top = stack[-1]
+            top = queue[0]
+            print(top)
+    elif (a=="back"):
+        if len(queue)==0:
+            print("-1")
+        else :
+            top = queue[-1]
             print(top)
     elif (a=="size"):
-        print(len(stack))
+        print(len(queue))
     elif (a=="empty"):
-        if(len(stack)==0):
+        if(len(queue)==0):
             print("1")
         else:
             print("0")
     elif (a=="pop"):
-        if len(stack)==0:
+        if len(queue)==0:
             print("-1")
         else :
-            top=stack.pop()
+            top=queue.pop(0)
             print(top)
     else: #push
         b, c=a.split()
         c=int(c)
-        stack.append(c)
+        queue.append(c)
 
     count=count+1
