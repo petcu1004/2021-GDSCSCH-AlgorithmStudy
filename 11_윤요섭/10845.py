@@ -1,30 +1,32 @@
+import sys
 n = int(input())
+
 nlist = []
 for i in range(n):
-    c = input()
-    if c[:4] == 'push':
+    c = sys.stdin.readline().split()
+    if c[0] == 'push':
         num = int(c[-1])
         nlist.append(num)
-    elif c == 'pop':
+    elif c[0] == 'pop':
         if len(nlist) != 0:
             print(nlist[0])
             del nlist[0]
         else:
             print(-1)
-    elif c == 'empty':
-        if len(nlist) != 0:
-            print(0)
-        else:
+    elif c[0] == 'empty':
+        if len(nlist) == 0:
             print(1)
-    elif c == 'front':
+        else:
+            print(0)
+    elif c[0] == 'front':
         if len(nlist) != 0:
             print(nlist[0])
         else:
             print(-1)
-    elif c == 'back':
+    elif c[0] == 'back':
         if len(nlist) != 0:
             print(nlist[-1])
         else:
             print(-1)
-    elif c == 'size':
+    elif c[0] == 'size':
         print(len(nlist))
