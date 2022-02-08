@@ -1,20 +1,21 @@
 import sys
-t = int(sys.stdin.readline())
-for i in range(t):  #테스트 케이스 개수
-    n = int(sys.stdin.readline())  #전화번호 수
-    nlist = []
-    for j in range(n):
-        call_num = (sys.stdin.readline())
-        nlist.append(call_num)
-        answer = 'YES'
-        if j != 0:
-            ch_num = nlist[j]
-            # print(ch_num)
-            for k in range(j):
-                if len(ch_num) > len(nlist[k]):
-                    # print(nlist[k])
-                    # print(ch_num[:len(nlist[k]) - 1])
-                    if int(ch_num[:len(nlist[k]) - 1]) == int(nlist[k]):
-                        answer = 'NO'
-                        break
-    print(answer)
+t = int(sys.stdin.readline())  #테스트 개수
+for _ in range(t):
+    n = int(sys.stdin.readline())  #전화번호 개수
+    #공백 제거 필요
+    num_list = [sys.stdin.readline().strip()
+                for j in range(n)]  #이 줄로 밑에 줄 내용 해결
+    # for j in range(n):
+    #     call_num = int(sys.stdin.readline())
+    #     num_list.append(call_num)
+    num_list = sorted(num_list)
+    flag = True
+    for i in range(n - 1):
+        long = len(num_list[i])
+        if num_list[i] == num_list[i + 1][:long]:
+            flag = False
+            break
+    if flag:
+        print('YES')
+    else:
+        print('NO')
